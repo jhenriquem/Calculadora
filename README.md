@@ -1,5 +1,5 @@
-# Calculadora <img src="calcular.png" wight="20px"/>
+# <img src="calcular.png" height="30rem" /> Calculadora
 
 Neste projeto criei uma calculadora utilizando HTML, Css e Javascript
 
-[ Live Demo ] ()
+[ Live Demo ](https://jhenriquem.github.io/Calculadora) :point_left:
