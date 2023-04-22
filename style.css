@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  color: #d8dee9;
+  font-size: clamp(1rem, 1.1rem + 1vw, 1.2rem);
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #3b4252;
+}
+.container {
+  background-color: #4c566a;
+  width: 18rem;
+  margin: 0 auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  padding: 20px;
+  left: 50%;
+  height: 26rem;
+}
+
+.div_output {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#output {
+  border: none;
+  width: 100%;
+  text-align: right;
+  background-color: transparent;
+  outline: none;
+  font-size: clamp(1rem, 1.3rem + 1vw, 1.5rem);
+}
+#output::placeholder {
+  color: #d8dee9;
+}
+
+.display {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.buttons,
+#btn_result,
+#btn_clean,
+#btn_backspace {
+  padding: 18px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  border-radius: 6px;
+}
+
+#btn_result {
+  border: 0;
+  background-color: #88c0d0;
+  grid-row: span 2;
+}
+
+#btn_result:active {
+  background-color: #3b4252;
+}
+.buttons:active {
+  background-color: #434c5e;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    display: grid;
+    grid-template-rows: 10vh, 85vh;
+  }
+}

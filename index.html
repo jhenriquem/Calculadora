@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="calcular.png" type="image/x-icon">
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="div_output">
+        <input type="text" placeholder="0" id="output" onkeypress="return isNumberOrOperator(event)"/>
+      </div>
+      <div class="display">
+          <button id="btn_clean"  >C</button>
+          <button class="buttons" value="**">**</button>
+          <button class="buttons" value="/">/</button>
+          <button class="buttons" value="*">*</button>
+          
+          <button class="buttons" value="7">7</button>
+          <button class="buttons" value="8">8</button>
+          <button class="buttons" value="9">9</button>
+          <button class="buttons" value="-">-</button>
+
+          <button class="buttons" value="4">4</button>
+          <button class="buttons" value="5">5</button>
+          <button class="buttons" value="6">6</button>
+          <button class="buttons" value="+">+</button>                
+
+          <button class="buttons" value="1">1</button>
+          <button class="buttons" value="2">2</button>
+          <button class="buttons" value="3">3</button>
+          <button id="btn_result" >=</button>
+
+        
+          <button class="buttons" value="0">0</button>
+          <button class="buttons" value=".">.</button>
+          <button id="btn_backspace"> 
+            <i class="material-icons">&#xe14a;</i>
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <script src="calc.js"></script>
+  </body>
+</html>
