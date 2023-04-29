@@ -8,19 +8,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="calcular.png" type="image/x-icon">
+    <link rel="shortcut icon" href="calculator.png" type="image/x-icon">
     <title>Calculadora</title>
   </head>
   <body>
     <div class="container">
+      <div class="previous"></div>
       <div class="div_output">
         <input type="text" placeholder="0" id="output" onkeypress="return isNumberOrOperator(event)"/>
       </div>
       <div class="display">
-          <button id="btn_clean"  >C</button>
-          <button class="buttons" value="**">**</button>
-          <button class="buttons" value="/">/</button>
-          <button class="buttons" value="*">*</button>
+          <button id="btn_clean">AC</button>
+          <button class="buttons" value="**">^</button>
+          <button class="buttons" value="/">÷</button>
+          <button class="buttons" value="*">x</button>
           
           <button class="buttons" value="7">7</button>
           <button class="buttons" value="8">8</button>

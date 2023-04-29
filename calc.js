@@ -15,7 +15,7 @@ window.onload = () => {
 
 buttons.forEach((buttons) => {
   buttons.addEventListener("click", () => {
-    if (output.value == "Expressão invalida") {
+    if (output.value == "Erro") {
       output.value = "";
     }
     check_RepeatOperations(buttons.value);
@@ -41,22 +41,23 @@ result.addEventListener("click", equal);
 function equal() {
   equal_pressed = 1;
   let expression = output.value;
-
+  document.querySelector(".previous").innerHTML = expression;
   try {
     let solution = eval(expression);
     if (Number.isInteger(solution)) {
-      output.value = solution;
+      output.value = `${solution}`;
     } else {
-      output.value = solution.toFixed(2);
+      output.value = `${solution.toFixed(2)}`;
     }
   } catch (err) {
-    output.value = "Expressão invalida";
+    output.value = "Erro";
   }
 }
 
 // ---------------- Clean Action ----------------------
 clean.addEventListener("click", () => {
   output.value = " ";
+  document.querySelector(".previous").innerHTML = " ";
 });
 
 // ----------------  Backspace Action -----------------
