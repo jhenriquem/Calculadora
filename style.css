@@ -35,6 +35,7 @@ body {
 }
 
 .previous {
+  width: 100%;
   transition: 0.3s;
   font-size: 0.8rem;
   text-align: right;
