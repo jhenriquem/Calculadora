@@ -1,15 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+:root {
+  --main-color: #336dde;
+  --color-text: #ffffff;
+  --color-text-btn: #d8dee9;
+  --background-color-container: #302c3b;
+}
 
 * {
   box-sizing: border-box;
-  color: #d8dee9;
   font-size: clamp(1rem, 1.1rem + 1vw, 1.2rem);
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
 body {
   margin: 0 auto;
-  background-color: #9966ff;
+  background-color: var(--main-color);
 }
 .container {
   width: 16rem;
@@ -22,7 +28,7 @@ body {
   left: 50%;
   overflow: auto;
   height: 28rem;
-  background-color: #302c3b;
+  background-color: var(--background-color-container);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 .div_output {
@@ -37,23 +43,23 @@ body {
 .previous {
   width: 100%;
   transition: 0.3s;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: right;
   height: 1rem;
   margin-bottom: 2px;
-  color: #bb99ff;
+  color: var(--main-color);
 }
 #output {
   border: none;
   width: 100%;
-  color: #ffffff;
+  color: var(--color-text);
   text-align: right;
   background-color: transparent;
-  outline: none;
+  overflow-x: auto;
   font-size: clamp(1.6rem, 1.9rem + 1vw, 2.3rem);
 }
 #output::placeholder {
-  color: #d8dee9;
+  color: var(--color-text);
 }
 
 .display {
@@ -73,15 +79,16 @@ body {
   background-color: transparent;
   border: 0;
   border-radius: 6px;
+  color: var(--color-text-btn);
 }
 
 #btn_clean {
-  color: #9966ff;
+  color: var(--main-color);
 }
 
 #btn_result {
   border: 0;
-  background-color: #9966ff;
+  background-color: var(--main-color);
   grid-row: span 2;
 }
 
@@ -92,7 +99,7 @@ body {
   background-color: #434c5e;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .container {
     width: 100%;
     border-radius: 0;
@@ -104,11 +111,5 @@ body {
   }
   .div_output {
     margin-bottom: 1rem;
-  }
-}
-
-@media screen and (max-height: 645px) {
-  .container {
-    padding-top: 20px;
   }
 }

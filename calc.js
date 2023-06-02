@@ -1,22 +1,22 @@
 let equal_pressed = 0;
 
-let output = document.getElementById("output");
-let all_Operations = "+-*/.**";
+let output = document.getElementById('output');
+let all_Operations = '+-*/.**';
 
-let buttons = document.querySelectorAll(".buttons");
+let buttons = document.querySelectorAll('.buttons');
 
-let clean = document.getElementById("btn_clean");
-let result = document.getElementById("btn_result");
-let backspace = document.getElementById("btn_backspace");
+let clean = document.getElementById('btn_clean');
+let result = document.getElementById('btn_result');
+let backspace = document.getElementById('btn_backspace');
 
 window.onload = () => {
-  output.value = " ";
+  output.innerHTML = '0';
 };
 
 buttons.forEach((buttons) => {
-  buttons.addEventListener("click", () => {
-    if (output.value == "Erro") {
-      output.value = "";
+  buttons.addEventListener('click', () => {
+    if (output.innerHTML == 'Erro') {
+      output.innerHTML = '';
     }
     check_RepeatOperations(buttons.value);
   });
@@ -25,67 +25,45 @@ buttons.forEach((buttons) => {
 // -------- Check for repeat operations ---------------
 function check_RepeatOperations(current_btnValue) {
   if (all_Operations.includes(current_btnValue)) {
-    if (all_Operations.includes(output.value.slice(-1))) {
-    } else if (all_Operations.includes(output.value.slice(-2))) {
+    if (all_Operations.includes(output.innerHTML.slice(-1))) {
+    } else if (all_Operations.includes(output.innerHTML.slice(-2))) {
     } else {
-      output.value += current_btnValue;
+      output.innerHTML += current_btnValue;
     }
   } else {
-    output.value += current_btnValue;
+    if (output.innerHTML.length >= 10) {
+    } else {
+      output.innerHTML += current_btnValue;
+    }
   }
 }
 
 // ---------------- Equal action ----------------------
-result.addEventListener("click", equal);
+result.addEventListener('click', equal);
 
 function equal() {
   equal_pressed = 1;
-  let expression = output.value;
-  document.querySelector(".previous").innerHTML = expression;
+  let expression = output.innerHTML;
+  document.querySelector('.previous').innerHTML = expression;
   try {
     let solution = eval(expression);
     if (Number.isInteger(solution)) {
-      output.value = `${solution}`;
+      output.innerHTML = `${solution}`;
     } else {
-      output.value = `${solution.toFixed(2)}`;
+      output.innerHTML = `${solution.toFixed(2)}`;
     }
   } catch (err) {
-    output.value = "Erro";
+    output.innerHTML = 'Erro';
   }
 }
 
 // ---------------- Clean Action ----------------------
-clean.addEventListener("click", () => {
-  output.value = " ";
-  document.querySelector(".previous").innerHTML = " ";
+clean.addEventListener('click', () => {
+  output.innerHTML = ' ';
+  document.querySelector('.previous').innerHTML = ' ';
 });
 
 // ----------------  Backspace Action -----------------
-backspace.addEventListener("click", () => {
-  output.value = output.value.substring(0, output.value.length - 1);
+backspace.addEventListener('click', () => {
+  output.innerHTML = output.innerHTML.substring(0, output.innerHTML.length - 1);
 });
-
-// Função que permite que apenas numeros e simbolos matematicos sejam digitados no output
-
-function isNumberOrOperator(evt) {
-  var charCode = evt.which ? evt.which : event.keyCode;
-  if (
-    charCode == 43 ||
-    charCode == 45 ||
-    charCode == 42 ||
-    charCode == 47 ||
-    charCode == 40 ||
-    charCode == 41 ||
-    charCode == 40 ||
-    charCode == 41 ||
-    charCode == 123 ||
-    charCode == 125 ||
-    charCode == 91 ||
-    charCode == 93 ||
-    charCode == 46 ||
-    (charCode >= 48 && charCode <= 57)
-  ) {
-    return true;
-  }
-  return false;
-}
