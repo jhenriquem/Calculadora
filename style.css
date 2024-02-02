@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
 
 :root {
-  --main-color: #336dde;
-  --color-text: #ffffff;
-  --color-text-btn: #d8dee9;
-  --background-color-container: #302c3b;
+  --main-color: #5e81ac;
+  --color-text: #eceff4;
+  --color-text-btn: #e5e9f0;
+  --background-color-container: #2e3440;
 }
 
 * {
   box-sizing: border-box;
   font-size: clamp(1rem, 1.1rem + 1vw, 1.2rem);
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   background-color: var(--main-color);
 }
 .container {
@@ -29,7 +30,7 @@ body {
   overflow: auto;
   height: 28rem;
   background-color: var(--background-color-container);
-  box-shadow: 5px 8px 20px 0 rgba(31, 38, 135, 0.7);
+  box-shadow: 5px 8px 20px 0 var(--background-color-container);
 }
 .div_output {
   width: 100%;
@@ -43,20 +44,20 @@ body {
 .previous {
   width: 100%;
   transition: 0.3s;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   text-align: right;
   height: 1rem;
   margin-bottom: 2px;
   color: var(--main-color);
 }
 #output {
-  border: none;
   width: 100%;
   color: var(--color-text);
   text-align: right;
-  background-color: transparent;
-  overflow-x: auto;
-  font-size: clamp(1.6rem, 1.9rem + 1vw, 2.3rem);
+  overflow-x: hidden;
+  text-wrap: nowrap;
+  transition: font-size 0.3s;
+  font-size: clamp(0.8rem, 1rem + 1.1vw, 1.6rem);
 }
 #output::placeholder {
   color: var(--color-text);
@@ -93,10 +94,10 @@ body {
 }
 
 #btn_result:active {
-  background-color: #3b4252;
+  background-color: #81a1c1;
 }
 .buttons:active {
-  background-color: #434c5e;
+  background-color: #3b4252;
 }
 
 @media screen and (max-width: 430px) {
